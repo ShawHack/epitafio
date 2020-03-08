@@ -35,7 +35,7 @@ export class SepultadosListPage  {
           handler: async () => {
             await this.sepultadosService.delete(sepultado);
             await this.overlayservice.toast({
-              message: `Tarefa "${sepultado.nome}" deletado`
+              message: `Epitáfio"${sepultado.nome}" deletado`
             });
           }
          },
@@ -48,7 +48,7 @@ export class SepultadosListPage  {
       const sepultadoToUpdate = {...sepultado, done: !sepultado.done};
       await this.sepultadosService.update(sepultadoToUpdate);
       await this.overlayservice.toast({
-        message: `Sepultado "${sepultado.nome}" ${sepultadoToUpdate.done ? 'Completada' : 'Atualizada'}!`
+        message: `Epitáfio "${sepultado.nome}" ${sepultadoToUpdate.done ? 'construido' : 'em reforma'}!`
       });
     }
 }

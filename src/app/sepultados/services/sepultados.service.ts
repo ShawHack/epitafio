@@ -20,7 +20,7 @@ export class SepultadosService  extends Firestore<Sepultado> {
       this.authService.authState$.subscribe(user => {
         if (user) {
           this.setCollection(`/users/${user.uid}/sepultados`, ref =>
-          ref.orderBy('done', 'asc').orderBy('title', 'asc'));
+          ref.orderBy('done', 'asc').orderBy('nome', 'asc'));
           return;
         }
         this.setCollection(null);

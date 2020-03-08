@@ -25,8 +25,8 @@ export class AppComponent {
 
   initializeApp() {
     this.pages = [
-      {url: '/sepultados', direction: 'back', icon: 'checkmark', text: 'Lista de tarefas'},
-      {url: '/sepultados/create', direction: 'forward', icon: 'add', text: 'Nova tarefa'}
+      {url: '/sepultados', direction: 'back', icon: 'checkmark', text: 'Epitáfios'},
+      {url: '/sepultados/create', direction: 'forward', icon: 'add', text: 'Novo Epitáfio'}
     ];
     this.authService.authState$.subscribe(user => (this.user = user));
 
