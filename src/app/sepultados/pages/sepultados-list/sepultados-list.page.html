@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color ="primary">
+    <app-menu-toggle slot="start" menu="main-menu">
+
+    </app-menu-toggle>
+    <ion-title>Tarefas</ion-title>
+    <app-logout-button 
+    slot="end" 
+    menu="main-menu"
+    ></app-logout-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list *ngIf="(sepultados$ | async) as sepultados">
+<ng-container *ngIf="sepultados.length > 0 ; else nosepultados">
+  <app-sepultados-item 
+  *ngFor=" let sepultado of sepultados" 
+  [sepultado]= "sepultado"
+  (update)="onUpdate($event)"
+  (delete) = "onDelete($event)"
+  (done) = "onDone($event)"
+  ></app-sepultados-item>
+
+</ng-container>
+
+<ng-template #nosepultados>
+  <ion-item lines= "none">Você não possui nenhuma tarefa </ion-item>
+</ng-template>
+
+</ion-list>
+
+<ion-fab 
+vertical="bottom" 
+horizontal="end" 
+slot="fixed">
+
+<ion-fab-button routerLink ="/sepultados/create" routerDirection="forward">
+  <ion-icon name="add"></ion-icon>
+</ion-fab-button>
+</ion-fab>
+</ion-content>

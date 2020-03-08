@@ -1,0 +1,232 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/sepultados"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{pageTitle}}</ion-title>
+    <app-logout-button 
+    slot="end" 
+    menu="main-menu"
+    ></app-logout-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+ <form [formGroup] = "sepultadosForm" (submit)= "onSubmit()">
+  <ion-item>
+    <ion-icon name="person-add" slot="start" color="primary"></ion-icon>
+    <ion-input
+      type="text"
+      placeholder="Nome"
+      autofocus="true"
+      inputmode="text"
+      formControlName="nome"
+    >
+    </ion-input>
+    
+    <ion-toggle
+      *ngIf="sepultadosId"
+      slot="end"
+      color="primary"
+      formControlName="done"
+      ></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon  name="person-add"  slot="start" color="primary"></ion-icon>
+    <ion-input
+      type="text"
+      placeholder="Pai"
+      autofocus="true"
+      inputmode="text"
+      formControlName="pai"
+    >
+    </ion-input>
+    
+    <ion-toggle
+      *ngIf="sepultadosId"
+      slot="end"
+      color="primary"
+      formControlName="done"
+      ></ion-toggle>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-icon name="person-add"  slot="start" color="primary"></ion-icon>
+    <ion-input
+      type="text"
+      placeholder="Mãe"
+      autofocus="true"
+      inputmode="text"
+      formControlName="mae"
+    >
+    </ion-input>
+    
+    <ion-toggle
+      *ngIf="sepultadosId"
+      slot="end"
+      color="primary"
+      formControlName="done"
+      ></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="calendar" slot="start" color="primary"></ion-icon>
+    <ion-input
+      type="text"
+      placeholder="Data de nasc."
+      autofocus="true"
+      inputmode="text"
+      formControlName="dataNasc"
+    >
+    </ion-input>
+    
+    <ion-toggle
+      *ngIf="sepultadosId"
+      slot="end"
+      color="primary"
+      formControlName="done"
+      ></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="calendar" slot="start" color="primary"></ion-icon>
+    <ion-input
+      type="text"
+      placeholder="Data de fal."
+      autofocus="true"
+      inputmode="text"
+      formControlName="dataFal"
+    >
+    </ion-input>
+    
+    <ion-toggle
+      *ngIf="sepultadosId"
+      slot="end"
+      color="primary"
+      formControlName="done"
+      ></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="calendar" slot="start" color="primary"></ion-icon>
+    <ion-input
+      type="text"
+      placeholder="Idade"
+      autofocus="true"
+      inputmode="text"
+      formControlName="idade"
+    >
+    </ion-input>
+    
+    <ion-toggle
+      *ngIf="sepultadosId"
+      slot="end"
+      color="primary"
+      formControlName="done"
+      ></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="move" slot="start" color="primary"></ion-icon>
+    <ion-input
+      type="text"
+      placeholder="Cemitério"
+      autofocus="true"
+      inputmode="text"
+      formControlName="cemiterio"
+    >
+    </ion-input>
+    
+    <ion-toggle
+      *ngIf="sepultadosId"
+      slot="end"
+      color="primary"
+      formControlName="done"
+      ></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-icon name="square-outline" slot="start" color="primary"></ion-icon>
+    <ion-input
+      type="text"
+      placeholder="Placa"
+      autofocus="true"
+      inputmode="text"
+      formControlName="placa"
+    >
+    </ion-input>
+    
+    <ion-toggle
+      *ngIf="sepultadosId"
+      slot="end"
+      color="primary"
+      formControlName="done"
+      ></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="square" slot="start" color="primary"></ion-icon>
+    <ion-input
+      type="text"
+      placeholder="Quadra"
+      autofocus="true"
+      inputmode="text"
+      formControlName="quadra"
+    >
+    </ion-input>
+    
+    <ion-toggle
+      *ngIf="sepultadosId"
+      slot="end"
+      color="primary"
+      formControlName="done"
+      ></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="swap" slot="start" color="primary"></ion-icon>
+    <ion-input
+      type="text"
+      placeholder="Rua"
+      autofocus="true"
+      inputmode="text"
+      formControlName="rua"
+    >
+    </ion-input>
+    
+    <ion-toggle
+      *ngIf="sepultadosId"
+      slot="end"
+      color="primary"
+      formControlName="done"
+      ></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="paper" slot="start" color="primary"></ion-icon>
+    <ion-input
+      type="text"
+      placeholder="Descrição"
+      autofocus="true"
+      inputmode="text"
+      formControlName="descricao"
+    >
+    </ion-input>
+    
+    <ion-toggle
+      *ngIf="sepultadosId"
+      slot="end"
+      color="primary"
+      formControlName="done"
+      ></ion-toggle>
+  </ion-item>
+  <ion-button 
+  expand="full" 
+  type="submit"
+  [disabled] = "sepultadosForm.invalid"
+  >
+   Salvar
+  </ion-button>
+ </form>
+</ion-content>
