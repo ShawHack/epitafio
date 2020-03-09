@@ -12,6 +12,15 @@ const routes: Routes = [
     path: 'sepultados',
     loadChildren: () => import('./sepultados/sepultados.module').then( m => m.SepultadosModule), canLoad: [AuthGuard]
   },
+{ 
+  path: 'pesquisar',
+  // tslint:disable-next-line: max-line-length
+  loadChildren: () => import('./sepultados/pages/sepultado-pesquisa/sepultado-pesquisa.module').then( m => m.SepultadoPesquisaPageModule ), canLoad: [AuthGuard]
+},
+
+  
+
+
 ];
 
 @NgModule({

@@ -20,6 +20,14 @@ const routes: Routes = [
         loadChildren: () => import('./pages/sepultados-list/sepultados-list.module').then( m => m.SepultadosListPageModule)
       }
       ]
+  },
+  {
+    path: 'sepultados-perfil',
+    loadChildren: () => import('./pages/sepultados-perfil/sepultados-perfil.module').then( m => m.SepultadosPerfilPageModule)
+  },
+  {
+    path: 'sepultado-pesquisa',
+    loadChildren: () => import('./pages/sepultado-pesquisa/sepultado-pesquisa.module').then( m => m.SepultadoPesquisaPageModule)
   }
   ];
 
