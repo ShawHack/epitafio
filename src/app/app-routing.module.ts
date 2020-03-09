@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {AuthGuard} from './core/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'pesquisar', pathMatch: 'full' },
   {
     path: 'login',
     loadChildren: () => import('./auth/auth/auth.module').then( m => m.AuthModule)
@@ -15,7 +15,12 @@ const routes: Routes = [
 { 
   path: 'pesquisar',
   // tslint:disable-next-line: max-line-length
-  loadChildren: () => import('./sepultados/pages/sepultado-pesquisa/sepultado-pesquisa.module').then( m => m.SepultadoPesquisaPageModule ), canLoad: [AuthGuard]
+  loadChildren: () => import('./sepultados/pages/sepultado-pesquisa/sepultado-pesquisa.module').then( m => m.SepultadoPesquisaPageModule )
+},
+{ 
+path: 'perfil',
+  // tslint:disable-next-line: max-line-length
+  loadChildren: () => import('./sepultados/pages/sepultados-perfil/sepultados-perfil.module').then( m => m.SepultadosPerfilPageModule )
 },
 
   
