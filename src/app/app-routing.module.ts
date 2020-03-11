@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {AuthGuard} from './core/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'pesquisar', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'login',
     loadChildren: () => import('./auth/auth/auth.module').then( m => m.AuthModule)

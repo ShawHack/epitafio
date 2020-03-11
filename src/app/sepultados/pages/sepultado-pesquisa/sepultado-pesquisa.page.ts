@@ -11,47 +11,18 @@ import { take } from 'rxjs/operators';
   templateUrl: './sepultado-pesquisa.page.html',
   styleUrls: ['./sepultado-pesquisa.page.scss'],
 })
-export class SepultadoPesquisaPage   {
+export class SepultadoPesquisaPage implements OnInit  {
   
  
   sepultados$: Observable <Sepultado[]>;
   
   constructor(private overlayservice: OverlayService , private navCtrl: NavController, private sepultadosService: SepultadosService ) { }
 
-  async ionViewDidEnter(): Promise< void> {
-    const loading = await this.overlayservice.loading();
-    this.sepultados$ = this.sepultadosService.getAll();
-    this.sepultados$.pipe(take(1)).subscribe(sepultado => loading.dismiss());
-}
-onUpdate(sepultado: Sepultado): void {
-  this.navCtrl.navigateForward(`/sepultados/edit/${sepultado.id}`);
-}
-
-async onDelete(sepultado: Sepultado): Promise<void> {
- await this.overlayservice.alert({
-   message: `Deseja realmente deletar "${sepultado.nome}"? `,
-   buttons: [
-     {
-      text: 'Sim',
-      handler: async () => {
-        await this.sepultadosService.delete(sepultado);
-        await this.overlayservice.toast({
-          message: `Epitáfio"${sepultado.nome}" deletado`
-        });
-      }
-     },
-     'Não'
-   ]
- });
-}
-
-async onDone(sepultado: Sepultado): Promise<void> {
-  const sepultadoToUpdate = {...sepultado, done: !sepultado.done};
-  await this.sepultadosService.update(sepultadoToUpdate);
-  await this.overlayservice.toast({
-    message: `Epitáfio "${sepultado.nome}" ${sepultadoToUpdate.done ? 'construido' : 'em reforma'}!`
-  });
-}
+  ngOnInit(): void {
+   
+    
+  }
+  
 }
 
 
